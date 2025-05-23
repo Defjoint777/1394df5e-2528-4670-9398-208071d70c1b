@@ -87,12 +87,14 @@ This reads a single word (up to 31 characters) from the keyboard and prints it b
 ## 3) Questions
 
 1. What does `scanf` do, and from where does it read by default?
+   Its ready from Standartbibliothek stdio.h by default, scanf() writing user input to FILE *stdin buffer.
 
-2. What are the risks of using `scanf("%s", ...)` without a length specifier?
-
-3. How is the `read` system call used in Assembly to receive input from `stdin`?
-
-4. What is the purpose of file descriptor `0`?
+3. What are the risks of using `scanf("%s", ...)` without a length specifier?
+the risk is to get bufferoverflow,crash.
+4. How is the `read` system call used in Assembly to receive input from `stdin`?
+rax,  0 (Syscall read), rdi, 0 (stdin), rsi, buffer (pointer to buffer), rdx, 60 (Read 60 bytes) Syscall 
+5. What is the purpose of file descriptor `0`?
+   stdin, usually Keyboard
 
 ## 4) Advice
 
